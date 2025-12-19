@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition active:scale-[0.99]
+    bg-slate-800 text-white hover:bg-black/80;
+  }
+
+  .btn-soft {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition active:scale-[0.99]
+    bg-slate-200 text-slate-700 hover:bg-slate-400 hover:text-white;
+  }
+
+  .card {
+    @apply rounded-2xl border bg-white/80 backdrop-blur shadow-sm;
+  }
+
+  .container {
+    @apply mx-auto w-full max-w-6xl px-4;
+  }
+}
