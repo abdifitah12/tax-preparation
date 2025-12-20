@@ -12,11 +12,13 @@ export default function Navbar() {
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
     setOpen(false);
   };
 
-  // Close menu on Escape
+  // Close menu on Escape key
   useEffect(() => {
     const onKeyDown = (e) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKeyDown);
@@ -26,18 +28,20 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="container flex items-center justify-between py-3">
-        {/* Logo */}
+
+        {/* ================= LOGO ================= */}
         <button
           onClick={() => scrollTo("home")}
-          className="flex items-center gap-2 font-extrabold text-slate-900"
+          className="flex items-center gap-3"
         >
-          <span className="inline-grid h-9 w-9 place-items-center rounded-xl bg-slate-100">
-            CPA
-          </span>
-          <span className="hidden sm:block">Firm</span>
+          <img
+            src="/logo.png"
+            alt="AAWPLUS Financial Services LLC"
+            className="h-10 sm:h-12 w-auto"
+          />
         </button>
 
-        {/* Desktop menu */}
+        {/* ================= DESKTOP MENU ================= */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
           {links.map((l) => (
             <button
@@ -50,14 +54,24 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right side */}
+        {/* ================= RIGHT SIDE ================= */}
         <div className="flex items-center gap-3">
+
+          {/* Profile Image (desktop only) */}
+          <img
+            src="/pic1.jpeg"
+            alt="Managing Partner"
+            className="hidden sm:block h-10 w-10 rounded-full object-cover border border-slate-300 shadow-sm cursor-pointer"
+            title="Founder & Managing Partner"
+            onClick={() => scrollTo("about")}
+          />
+
           {/* Call button (desktop) */}
           <a
-            href="tel:12547511133"
+            href="tel:12067718688"
             className="hidden sm:inline-flex btn-primary"
           >
-            Call us: (254) 751-1133
+            Call us: (206) 771-8688
           </a>
 
           {/* Hamburger (mobile) */}
@@ -72,7 +86,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* ================= MOBILE MENU ================= */}
       {open && (
         <div className="md:hidden border-t bg-white">
           <div className="container py-3 space-y-2">
@@ -86,14 +100,14 @@ export default function Navbar() {
               </button>
             ))}
 
-            {/* Call button (mobile full width) */}
+            {/* Mobile call button */}
             <a
-              href="tel:12547511133"
+              href="tel:12067718688"
               className="btn-primary w-full"
               style={{ display: "inline-flex" }}
               onClick={() => setOpen(false)}
             >
-              Call us: (254) 751-1133
+              Call us: (206) 771-8688
             </a>
           </div>
         </div>
