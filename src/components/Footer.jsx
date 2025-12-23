@@ -30,28 +30,44 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold mb-2">Contact</h3>
-            <div className="h-px bg-slate-500 mb-2" />
-            <p className="font-medium">Traplena, Sullivan & Reinke, PC</p>
-            <p>Waco, TX</p>
-            <p>
-              Phone:{" "}
-              <a href="tel:12547511133" className="hover:text-white">
-                (254) 751-1133
-              </a>
-            </p>
-            <p>
-              <a href="mailto:jason@tsr-cpa.com" className="hover:text-white">
-                jason@tsr-cpa.com
-              </a>
-            </p>
-          </div>
+  <h3 className="font-semibold mb-2">Contact</h3>
+  <div className="h-px bg-slate-500 mb-2" />
+
+  <p className="font-medium">
+    AAWPLUS Financial Services LLC
+  </p>
+
+  <p>
+    Madina Mall (Opposite Tukwila Library)
+  </p>
+
+  <p>
+    1420 International Blvd, Tukwila, WA
+  </p>
+
+  <p className="mt-1">
+    Phone:{" "}
+    <a href="tel:12067718688" className="hover:text-white">
+      (206) 771-8688
+    </a>
+  </p>
+
+  <p>
+    {/* <a
+      href="mailto:info@aawplus.com"
+      className="hover:text-white"
+    >
+      info@aawplus.com
+    </a> */}
+  </p>
+</div>
+
 
         </div>
 
         {/* Bottom line */}
         <div className="mt-6 border-t border-slate-600 pt-3 text-center text-xs text-slate-300">
-          © {new Date().getFullYear()} Your CPA Firm
+          © {new Date().getFullYear()}  
         </div>
       </div>
     </footer>
